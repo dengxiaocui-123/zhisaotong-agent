@@ -1,0 +1,22 @@
+﻿.venv/
+.idea/
+__pycache__/
+*.py[cod]
+*$py.class
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.env
+.env.*
+
+logs/
+chroma_db/
+
+*.pkl
+*.text
+
+# Optional: uncomment these if they contain private data or large model files
+# data/
+# model/

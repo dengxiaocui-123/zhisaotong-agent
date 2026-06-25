@@ -1,0 +1,2 @@
+# 保留原有的外部数据路径（作为降级方案）
+external_data_path: data/external/records.csv

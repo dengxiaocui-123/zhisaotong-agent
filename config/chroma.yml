@@ -1,0 +1,29 @@
+collection_name: agent
+persist_directory: chroma_db
+k: 3
+
+data_path: data
+md5_hex_store: md5.text   #记录哪些md5已经被处理过了
+allow_knowledge_file_type: ["txt", "pdf"]  #允许文件的后缀
+
+chunk_size: 200
+chunk_overlap: 20   #两个chunk(分片)之间可以相同的字符数
+separators: ["\n\n", "\n", ".", "!", "?", "。", "！", "？", " ", ""]
+
+# 混合检索配置
+
+bm25_k: 5  #bm25检索返回数量
+vector_k: 3  #向量检索返回数量(原 k 参数，重命名语义更清晰)
+fusion_k: 5  #混合检索合并后返回的数量
+rerank_top_n: 3  #Rerank后返回的数量
+vector_weight: 0.5  #向量权重，用于混合检索
+bm25_weight: 0.5  #bm25权重，用于混合检索
+
+#BGE-Rerank模型配置
+reranker_model_name: BAAI/bge-reranker-base    #BGE-Rerank模型名称
+reranker_use_fp16: true  #是否使用fp16推理
+
+#BM25 索引持久化
+bm25_persist_file: bm25_index.pkl
+
+
